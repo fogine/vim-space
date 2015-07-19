@@ -37,14 +37,14 @@ space.vim hooks into several of the more complex motion commands, such as
 |search-commands|, |jumpto-diffs|, |quickfix|, |tag-commands| and
 |location-list| and more commands. When a command that space.vim has hooked
 into is issued, it remaps the <Space> key to repeat that command, and it also
-remaps <S-Space> and <BS> to do the reverse.
+remaps <S-Space> and <c-@>(which is also <c-space>) to do the reverse.
 
 NOTE:~Due to terminal restrictions, <S-Space> may not be available. For that
-reason, the <BS> key is also used for reverse motions. Wherever this document
-talks of <S-Space>, <BS> can be used in its place.
+reason, the <c-@> key is also used for reverse motions. Wherever this document
+talks of <S-Space>, <c-@> can be used in its place.
 
-NOTE:~When using the gVim space.vim won't remap <BS> if any previous mappings
-to it already exists. When using Vim <BS> is always remapped.
+NOTE:~When using the gVim space.vim won't remap <c-@> if any previous mappings
+to it already exists. When using Vim <c-@> is always remapped.
 
 NOTE:~space.vim has some problems with the |'foldopen'| option. Since Vim
 won't open folds if a command is part of a mapping, space.vim tries to

@@ -91,20 +91,20 @@ elseif exists("g:space_loaded")
 endif
 let g:space_loaded = 1
 
-" Mapping of <Space>/<S-Space> and possibly <BS>
+" Mapping of <Space>/<S-Space> and possibly <c-@>
 noremap <expr> <silent> <Space>   <SID>do_space(0, "<Space>")
 noremap <expr> <silent> <S-Space> <SID>do_space(1, "<S-Space>")
 
 if exists("g:space_disable_select_mode")
     silent! sunmap <Space>
     silent! sunmap <S-Space>
-    silent! sunmap <BS>
+    silent! sunmap <c-@>
 endif
 
-if mapcheck("<BS>") == "" || !has("gui_running")
-    noremap <expr> <silent> <BS>      <SID>do_space(1, "<BS>")
+if mapcheck("<c-@>") == "" || !has("gui_running")
+    noremap <expr> <silent> <c-@>      <SID>do_space(1, "<c-@>")
     if exists("g:space_disable_select_mode")
-        silent! sunmap <BS>
+        silent! sunmap <c-@>
     endif
 endif
 
@@ -292,7 +292,7 @@ command! SpaceRemoveMappings call <SID>remove_space_mappings()
 function! s:remove_space_mappings()
     silent! unmap <Space>
     silent! unmap <S-Space>
-    silent! unmap <BS>
+    silent! unmap <c-@>
 
     silent! unmap f
     silent! unmap F
@@ -533,7 +533,7 @@ function! s:do_space(shift, default)
         else
             let cmd = a:default
         endif
-    " <S-Space> and <BS>
+    " <S-Space> and <c-@>
     else
         if exists("s:shift_space_move")
             let cmd = <SID>maybe_open_fold(s:shift_space_move)
