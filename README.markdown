@@ -5,4 +5,4 @@ key to repeat motions. It hooks into several of the more complex motion
 commands, such as search commands, diff movement commands, quickfix and
 location list commands, tag commands and more. When a command that space.vim
 has hooked into is issued, it remaps the `<Space>` key to repeat that
-command, and it also remaps `<S-Space>` and `<BS>` to do the inverse.
+command, and it also remaps `<S-Space>` and `<c-Space>` to do the inverse.
